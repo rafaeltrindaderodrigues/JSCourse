@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart Quantity</title>
+  </head>
+  <body>
+
+    <p>Cart Quantity</p>
+
+    <button onclick="quantity('show');">
+      Show Quantity
+    </button>
+
+    <button onclick="quantity('plus1');">
+      Add to cart
+    </button>
+
+    <button onclick="quantity('plus2');">
+      +2
+    </button>
+
+    <button onclick="quantity('plus3');">
+      +3
+    </button>
+
+    <button onclick="
+      
+      quantity('reset');
+    ">
+      Reset Cart
+    </button>
+
+   <script>
+         let cartQuantity = 0;
+         cartQuantity = quantity();
+
+         function quantity(type){
+
+          if (type == 'plus1'){
+            cartQuantity += 1;
+          } else if (type == 'plus2'){
+            cartQuantity = cartQuantity + 2;
+          } else if (type == 'plus3'){
+            cartQuantity = cartQuantity + 3;
+          } else if (type == 'reset'){
+            cartQuantity = 0;
+            console.log('Cart was reset');
+          }
+
+          console.log(`Cart quantity: ${cartQuantity}`);
+
+          return cartQuantity;
+         }
+
+   </script>
+  </body>
+</html>
