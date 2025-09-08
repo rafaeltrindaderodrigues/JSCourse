@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+
+        const cart = {
+            name: 'basketball',
+            price: 2095
+        }
+
+        console.log(cart)
+        console.log(cart.name);
+
+        /*Incrementando 500 cents*/
+        cart.price = cart.price + 500;
+        console.log(cart.price)
+
+        cart['delivery-time'] = '3 days';
+        console.log(cart)
+        console.log(cart['delivery-time']);
+        
+    </script>
+</body>
+</html>

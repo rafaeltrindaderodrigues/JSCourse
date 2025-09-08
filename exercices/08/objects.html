@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const object1 = { 
+            ['name']: 'Otávio',
+            method() {
+                console.log('Hello, World!');
+            }
+        };
+
+        const object2 = object1;
+        console.log(object1 === object2);
+
+        const object3 = {
+            ['name']: 'Otávio'
+        };
+    
+        const object4 = object1.name;
+        console.log(object4 == object3.name);
+
+        const {name} = object1;
+        console.log(name);
+        
+        let {method} = object1;
+        console.log(typeof method())
+
+    </script>
+</body>
+</html>
