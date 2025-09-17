@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Botões Toggle</title>
+  <style>
+    .toggle-button {
+      color: #000;
+      background-color: rgb(230, 230, 230);
+      font-size: 16px;
+      padding: 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: color 0.15s ease, background-color 0.15s ease;
+    }
+
+    .is-toggled {
+      color: #fff;
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="toggle-button js-button1" onclick="toggleButton('.js-button1')">Gaming</button>
+  <button class="toggle-button js-button2" onclick="toggleButton('.js-button2')">Music</button>
+  <button class="toggle-button js-button3" onclick="toggleButton('.js-button3')">Tech</button>
+
+  <script>
+    function toggleButton(selector){
+        const buttonToggled = document.querySelector(selector);
+
+        turnOffPreviousButton();
+        
+        buttonToggled.classList.toggle('is-toggled');
+        
+        /*Entender a lógica por trás do código abaixo para dps poder usar a versão melhorada - acima*/
+        /*if(!buttonToggled.classList.contains('is-toggled')){
+            buttonToggled.classList.add('is-toggled');
+        } else {
+            buttonToggled.classList.remove('is-toggled');
+        }*/
+    }
+
+    function turnOffPreviousButton() {
+        const previousButton = document.querySelector('.is-toggled');
+        if(previousButton){
+            previousButton.classList.remove('is-toggled');
+        }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .add-cart{
+            padding: 10px 50px;
+            color: #000;
+            background-color: rgb(255, 216, 20);
+            border-radius: 30px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .request-now{
+            background-color: #000;
+            color: #fff;
+            padding: 15px ;
+            border: none;
+            border-radius: 5px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        .schedule-later{
+            background-color: rgb(230, 230, 230);
+            color: #000;
+            font-weight: bold;
+            margin-left: 5px;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <button class="add-cart" onclick="imprimirNome('Teste')">Add to cart</button>
+    <hr>
+    <button class="request-now">Request now</button>
+    <button class="schedule-later">Schedule for later</button>
+    <div class="top-div">
+    </div>
+
+    <script>
+        const addCart = document.querySelector('.add-cart');
+        /*Peço para fazer uma animação com base nessa classe*/
+        const topDiv = document.querySelector('.top-div');
+
+        /*Depois adiciono essa e faço outra animação, dizendo que se a topDiv contém a classe, quero que faça outra coisa*/
+        topDiv.classList.add('div-added');
+
+        console.log(topDiv.classList.contains('div-added'));
+
+        function imprimirNome(tipo) {
+            console.log(tipo);
+        }
+    </script>
+</body>
+</html>
