@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let total = [];
+
+        for(let i = 0; i < 5; i++){
+            let valorDigitado = Number(window.prompt('Digite um valor:'));
+            
+            total.push(valorDigitado);
+        }
+
+        let valorSomado = 0;
+
+        for(let num = 0; num < total.length; num ++){
+            valorSomado += total[num];    
+        }
+
+        console.log(valorSomado);
+        
+    </script>
+</body>
+</html>

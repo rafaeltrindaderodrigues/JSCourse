@@ -1,0 +1,131 @@
+<DOCTYPE html>
+<html>
+    <header>
+        <title>Document 1</title>
+    </header>
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .to-do-list{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .to-do-list li{
+            padding: 2px 0;
+        }
+
+        .practice3-input{
+            padding: 10px;
+            width: 200px;
+        }
+
+        .practice3-input-date{
+            padding: 9px;
+        }
+
+        .add-button{
+            background-color: green;
+            border: none;
+            padding: 12px 50px;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        .to-do-list-practice3{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .to-do-list-practice3 li{
+            padding: 3px 0;
+        }
+
+    </style>
+    <body>
+        <div class="practice1">
+            <p>To do list practice 1</p>
+            <input type="text" placeholder="To do name" class="practice1-input">
+            <button onclick="firstButton()"> Add </button>
+        </div>
+        <div class="practice2">
+            <p>To do list practice 2</p>
+            <input type="text" placeholder="To do name" class="practice2-input">
+            <button onclick="secondButton()"> Add </button>
+            <ul class="to-do-list">
+                <!--Inserir os li-->
+            </ul>
+        </div>
+        <div class="practice3">
+            <p>To do list practice 3</p>
+            <input type="text" placeholder="To do name" class="practice3-input">
+            <input type="date" class="practice3-input-date">
+            <button onclick="thirdButton()" class="add-button"> Add </button>
+            <ul class="to-do-list-practice3">
+                <!--Inserir os li-->
+            </ul>
+        </div>
+
+        <script>
+            const arrayFirstInput = [];
+            
+            function firstButton(){
+                const inputPractice1 = document.querySelector('.practice1-input');
+
+
+                arrayFirstInput.push(inputPractice1.value);
+                console.log(arrayFirstInput);
+
+                inputPractice1.value = '';
+
+            }
+
+            const toDoList = document.querySelector('.to-do-list');
+            
+            const arraySecondInput = [];
+            let count = 0;
+
+            function secondButton(){
+                const inputPractice2 = document.querySelector('.practice2-input');
+
+
+                arraySecondInput.push(inputPractice2.value);
+                console.log(arraySecondInput);
+
+                inputPractice2.value = '';
+                const liList = document.createElement('li');
+                liList.innerHTML = `${arraySecondInput[count]}`;
+
+                toDoList.appendChild(liList);
+                count ++;
+            }
+
+            const arrayThirdInput = [];
+            const toDoListPractice3 = document.querySelector('.to-do-list-practice3');
+            let countPractice3 = 0;
+
+            function thirdButton(){
+                const inputPractice3 = document.querySelector('.practice3-input');
+                const dataInput = document.querySelector('.practice3-input-date');
+
+                arrayThirdInput.push({valor: inputPractice3.value, data: dataInput.value});
+                
+                const liCreatePractice3 = document.createElement('li');
+                const divInsideLi = document.createElement('div');
+
+
+                liCreatePractice3.innerHTML = `${arrayThirdInput[countPractice3].valor} 
+                  ${arrayThirdInput[countPractice3].data}`
+
+                toDoListPractice3.appendChild(liCreatePractice3);
+                countPractice3 ++;
+            }
+
+
+        </script>
+    </body>
+</html>
